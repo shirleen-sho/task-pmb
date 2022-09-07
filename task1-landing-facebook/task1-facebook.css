@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* styling layout */
+
+.baris {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 120px;
+    column-gap: 60px;
+}
+.baris::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.kolom {
+    float: left;
+}
+.kolom .container {
+    text-align: center;
+    width: 400px;
+}
+
+/* styling komponen button */
+
+.btn-fb {
+    padding: 14px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.btn-login {
+    background-color: #1877f2;
+    width: 100%;
+}
+.btn-login:hover {
+    background-color: #0d65d9;
+}
+.btn-register {
+    background-color: #42b72a;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+.btn-register:hover {
+    background-color: #349121;
+}
+
+/* styling komponen lainnya */
+
+.logo {
+    width: 292px; 
+    margin-left: -25px;
+    margin-bottom: -40px;
+}
+.card-putih {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.card-putih input::placeholder{
+    color: #98999c;
+}
+.input-bar {
+    padding: 16px 12px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid lightgrey;
+}
+.pembatas {
+    background-color: lightgrey;
+    width: 100%;
+    height: 1px;
+    margin: 5px 0 10px;
+}
+
+/* styling text */
+
+.text-description-logo {
+    font-size: 28px;
+}
+.text-description-card {
+    font-size: 14px;
+    margin-top: 32px;
+}
+.a-1 {
+    font-size: 14px;
+    color: #1877f2; 
+    text-decoration: none;
+}
+.a-2 {
+    font-weight: bold; 
+    color: black;
+    text-decoration: none;
+}
+.a-1:hover, .a-2:hover {
+    text-decoration: underline;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 768px) {
+    .baris { flex-direction: column; }
+    .kolom { text-align: center;}
+    .logo, .kolom .container { margin-left: 0px; }
+}
+@media only screen and (min-width: 768px) {
+    .baris { flex-direction: row; }
+}

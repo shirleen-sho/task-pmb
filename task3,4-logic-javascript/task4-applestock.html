@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 - apple stock</title>
+</head>
+<body>
+    <span>Check the result from Inspect (Console)</span>
+    <script>
+        // function getMaxProfit adalah function menghitung profit. output dari function ini 
+        // adalah jumlah profit maksimal yang dapat diperoleh jika user melakukan trading saham kemarin.
+        const getMaxProfit = (stockPrices) => {
+            let id_min = 0, id_max = 1, min = 0;
+            let profit_max = 0;
+            
+            if(stockPrices.length < 2) {
+                console.log("ERROR: Array must be more than 2");
+            } else {
+                for(let i = 1; i < stockPrices.length; i++) {
+                    // membandingkan profit untuk mencari profit yang paling maksimal
+                    if(i !== min && stockPrices[id_max] - stockPrices[id_min] < stockPrices[i] - stockPrices[min]) {
+                            id_max = i;
+                            id_min = min;
+                    }
+                    // mencari nilai minimal sementara dari array
+                    if(stockPrices[i] < stockPrices[min]) { 
+                        min = i;
+                    }
+                }
+                console.log(`buy at $${stockPrices[id_min]} and sell at $${stockPrices[id_max]}`);
+                profit_max  = stockPrices[id_max] - stockPrices[id_min];
+            }
+            
+            return profit_max;
+        }
+
+        // test cases
+        stockPrices = [10, 7, 5, 8, 11, 9]; // EXPECTED : 6 (5 and 11)
+        console.log(`stock prices [${stockPrices}]`);
+        console.log(getMaxProfit(stockPrices));
+
+        stockPrices = [10, 7, 5, 4, 3];
+        console.log(`stock prices [${stockPrices}]`);
+        console.log(getMaxProfit(stockPrices));
+    
+    </script>
+</body>
+</html>

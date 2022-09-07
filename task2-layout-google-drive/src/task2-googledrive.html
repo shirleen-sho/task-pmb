@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive - layout</title>
+    <link href="../dist/output.css" rel="stylesheet">
+    <script>
+        function hideSideApp() {
+            var x = document.getElementById("sideapp");
+            var y = document.getElementById("showsideapp");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+                y.style.display = "none";
+            } else {
+                x.style.display = "none";
+                y.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body class="overflow-hidden">
+    <div class="h-full overflow-hidden">
+        <div id="header" class="header flex flex-row px-5 py-2">
+            <div class="flex flex-row items-center w-1/5 gap-3">
+                <img src="./images/logo-google-drive.png" alt="logo google drive" class="w-9"/>
+                <span class="text-xl font-medium">Drive</span>
+            </div>
+            <div class="w-3/5">
+                <div class="w-11/12 relative flex flex-row items-center">
+                    <img src="./images/icon-search.png" alt="icon search" class="absolute w-4 ml-6" />
+                    <input type="text" placeholder="Telusuri di Drive" class="w-full px-16 py-3 bg-gray-100 focus:bg-white rounded-lg"/>
+                    <img src="./images/icon-preference.png" alt="icon pref" class="absolute right-6 w-4" />
+                </div>
+            </div>
+            <div class="w-1/5 flex flex-row gap-16 justify-end items-center">
+                <div class="flex flex-row items-center gap-6">
+                    <img src="./images/icon-atas-dukungan.png" alt="icon help" class="w-5"/>
+                    <img src="./images/icon-atas-setelan.png" alt="icon settings" class="w-5"/>
+                </div>
+                <div class="flex flex-row items-center gap-6">
+                    <img src="./images/icon-atas-aplikasi-google.png" alt="icon show app" class="w-5"/>
+                    <div class="w-8 h-8 bg-green-900 text-white p-4 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        <div class="h-full overflow-hidden flex flex-row">
+            <div id="sidemenu" class="w-1/5 h-full flex flex-col">
+                <button class="bg-white text-sm w-[120px] px-4 py-3 rounded-3xl border-[1px] shadow-md m-3 flex flex-row items-center gap-5">
+                    <img src="./images/icon-plus.png" alt="+" class="w-5"/>
+                    Baru
+                </button>
+                
+                <button id="sub-sidemenu1" class="sub selected text-sm px-3 py-2.5 w-full flex flex-row items-center"><img class="h-5 ml-4" src="./images/icon-drive-saya.png" alt="icon drive"/><span class="ml-4 font-medium">Drive Saya</span></button>
+                <button id="sub-sidemenu2" class="sub text-sm px-3 py-2.5 w-full flex flex-row items-center"><img class="h-5 ml-4" src="./images/icon-komputer.png" alt="icon computer"/><span class="ml-4 font-medium">Komputer</span></button>
+                <button id="sub-sidemenu3" class="sub text-sm px-3 py-2.5 w-full flex flex-row items-center"><img class="h-5 ml-4" src="./images/icon-dibagikan-kepada-saya.png" alt="icon group user"/><span class="ml-4 font-medium">Dibagikan kepada saya</span></button>
+                <button id="sub-sidemenu4" class="sub text-sm px-3 py-2.5 w-full flex flex-row items-center"><img class="h-5 ml-4" src="./images/icon-terbaru.png" alt="icon clock"/><span class="ml-4 font-medium">Terbaru</span></button>
+                <button id="sub-sidemenu5" class="sub text-sm px-3 py-2.5 w-full flex flex-row items-center"><img class="h-5 ml-4" src="./images/icon-berbintang.png" alt="icon star"/><span class="ml-4 font-medium">Berbintang</span></button>
+                <button id="sub-sidemenu6" class="sub text-sm px-3 pt-2.5 pb-4 w-full flex flex-row items-center border-b-[1px]"><img class="h-5 ml-4" src="./images/icon-sampah.png" alt="icon trash"/><span class="ml-4 font-medium">Sampah</span></button>
+                
+                <div class="text-sm px-3 py-4 w-full flex flex-row items-center"><img class="h-5 ml-4" src="./images/icon-penyimpanan.png" alt="icon cloud"/><span class="ml-4 font-medium truncate">Penyimpanan (72% penuh)</span></div>
+                <meter value="72" min="0" max="100" class="ml-7 w-44">72%</meter>
+                <div class="ml-7 py-2 text-[13px] break-words">10,84 GB dari 15 GB telah digunakan</div>
+                <button class="ml-7 bg-white text-sm w-40 px-3 py-2 rounded-md border-[1px] font-medium text-blue-600">Beli penyimpanan</button>
+            </div>
+            <div id="content" class="w-full h-full ml-6">
+                <div class="flex flex-row bg-white justify-between items-center border-b-[1px] py-4 pr-8">
+                    <span class="text-xl">Drive Saya</span>
+                    <div class="flex flex-row items-center gap-8">
+                        <img src="./images/icon-atas-layout.png" alt="icon layout" class="w-6"/>
+                        <img src="./images/icon-atas-lihat-detail.png" alt="icon detail" class="w-5"/>
+                    </div>
+                </div>
+                <div class="overflow-auto" style="height: calc(100vh - 130px);">
+                    <div class="sticky top-0 z-50 bg-white flex flex-row text-sm border-b-[1px] py-4">
+                        <span class="w-4/12 font-semibold">Nama</span>
+                        <span class="w-3/12 font-semibold">Pemilik</span>
+                        <span class="w-3/12 font-semibold">Terakhir diubah</span>
+                        <span class="w-2/12 font-semibold">Ukuran file</span>
+                    </div>
+                    <div id="isi">
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Binar Academy - Front End JS</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">8 Agustus 2022 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Final Project Tilas Shop</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">22 Juli 2022 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Project Akhir Kepengurusan 2021/2022</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">5 Januari 2022 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Gathering Day KMB-USU 2021</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">1 Desember 2021 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Sertifikat Gathering Day</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">10 November 2021 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Asadha KMB-USU 2021</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">19 Agustus 2021 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Sertifikat Asadha</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">5 Agustus 2021 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Ujian Akhir Semester (3)</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">20 Januari 2020 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">KMB - MEDKOM 2021/2022</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">8 Oktober 2019 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                        <div class="flex flex-row text-sm border-b-[1px] py-4">
+                            <div class="w-4/12 flex flex-row items-center gap-4">
+                                <img src="./images/icon-folder.png" alt="icon folder" class="w-5"/>
+                                <span class="">Ujian Tengah Semester (3)</span>
+                            </div>
+                            <span class="w-3/12">saya</span>
+                            <span class="w-3/12">18 September 2019 saya</span>
+                            <span class="w-2/12">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sideapp" class="w-[60px] h-full flex flex-col items-center">
+                <div class="flex flex-col gap-9 pt-7 items-center">
+                    <img src="./images/icon-google-calendar.png" alt="icon gcalendar" class="w-5"/>
+                    <img src="./images/icon-google-keep.png" alt="icon gkeep" class="w-5"/>
+                    <img src="./images/icon-google-tasks.png" alt="icon gtasks" class="w-5"/>
+                </div>
+            </div>
+            <button class="absolute z-20 right-1 bottom-4 w-10 h-10 rounded-full bg-gray-100 flex justify-center items-center" onclick="hideSideApp()">
+                <img src="./images/icon-right-arrow.png" alt=">" class="w-2.5"/>
+            </button>
+            <button id="showsideapp" class="hidden absolute z-20 right-0 bottom-4 w-10 h-10 rounded-l-full bg-gray-100 justify-center items-center" onclick="hideSideApp()">
+                <img src="./images/icon-right-arrow.png" alt="<" class="ml-4 w-2.5 rotate-180"/>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

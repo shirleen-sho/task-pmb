@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeds Instagram</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="m-0 p-0 w-full h-full overflow-auto">
+    <div class="w-full h-full bg-gray-50">
+        <div class="w-full px-4 lg:px-32 py-3 border-b border-gray-300 bg-white sticky top-0 z-50 flex flex-row items-center justify-between">
+            <span class="text-2xl font-bold">Instagram</span>
+            <div class="w-[280px] hidden md:flex relative flex-row items-center">
+                <img src="./images/icon-search.png" alt="icon search" class="absolute w-4 ml-4" />
+                <input type="text" placeholder="Search" class="w-full px-12 py-2 bg-gray-100 focus:bg-white rounded-lg"/>
+            </div>
+            <div class="flex flex-row items-center gap-6">
+                <img src="./images/icon-home.png" alt="icon home" class="h-6 w-auto"/>
+                <img src="./images/icon-messenger.png" alt="icon messenger" class="h-6 w-auto"/>
+                <img src="./images/icon-explore.png" alt="icon explore" class="h-6 w-auto"/>
+                <img src="./images/icon-like.png" alt="icon like" class="h-6 w-auto"/>
+                <div class="w-7 h-7 bg-pink-300 text-white rounded-full"></div>
+            </div>
+        </div>
+        <div id="feeds" class="flex flex-col items-center gap-4 p-8 bg-white relative">
+            <!-- postingan feeds akan ditambahkan di container ini -->
+        </div>
+    </div>
+    <script>
+        // array of objects kumpulan data postingan feeds user
+        feeds = [
+            { 
+                feed_id: 1,
+                username: "_seorina", 
+                photo: "./images/1.jpg", 
+                caption: "With or without you", 
+                likes: 18750,
+                date: new Date("08/21/2022")
+            },
+            { 
+                feed_id: 2,
+                username: "magangmerdeka", 
+                photo: "./images/2.webp", 
+                caption: "Kepada Bapak/Ibu rekan mitra dan perwakilan kampus, Program MSIB angkatan 3 sudah resmi dimulai. Semoga kolaborasi yang baik antara mitra industri dan perguruan tinggi dapat meningkatkan kualitas pembelajaran mahasiswa. Salam, Tim MSIB", 
+                likes: 1130,
+                date: new Date("08/21/2022")
+            },
+            { 
+                feed_id: 3,
+                username: "tiffanyyoungofficial", 
+                photo: "./images/3.jpg",
+                caption:"한순간도 놓치고싶지 않은 소중한 여름",
+                likes: 473550,
+                date: new Date("08/20/2022") 
+            },
+            {
+                feed_id: 4,
+                username: "ericnam", 
+                photo: "./images/4.jpg",
+                caption:"its my personal take care of myself - self care month photo dump. I will eat drink and chill as much as i want and you should too cause you deserve it. Also i had 3 lobster rolls in 3 days. Bye.",
+                likes: 129448,
+                date: new Date("08/21/2022")
+            },
+            {
+                feed_id: 5,
+                username: "dk_is_dokyeom", 
+                photo: "./images/5.jpg",
+                caption:"Houston",
+                likes: 978011,
+                date: new Date("08/20/2022")
+            }
+        ]
+
+        const container = document.getElementById('feeds');
+        feeds.forEach((feed) => {
+            
+            // function tambahan
+            // untuk mendapatkan perbedaan hari dari tanggal hari ini - tanggal postingan
+            let postedDate = feed.date;
+            let today = new Date();
+            let dd = String(today.getDate()).padStart(2, '0');
+            let mm = String(today.getMonth() + 1).padStart(2, '0');
+            let yyyy = today.getFullYear();
+            today = new Date(mm + '/' + dd + '/' + yyyy);
+            let diff_time = today.getTime() - postedDate.getTime(); // mendapatkan perbedaan dalam waktu
+            let diff_days = diff_time / (1000 * 3600 * 24); // mendapatkan perbedaan dalam hari
+
+
+            // styling content feed untuk masing-masing postingan user
+            const content = `<div id="feed_user" class="border border-gray-300 w-[300px] sm:w-[450px] rounded-xl">
+                <div class="flex flex-row justify-between items-center p-3 border-b border-gray-300">
+                    <div class="flex flex-row items-center gap-4">
+                        <div class="w-9 h-9 bg-yellow-300 text-white rounded-full"></div>
+                        <div class="text-sm">${feed.username}</div>
+                    </div>
+                    <img src="./images/icon-more.png" alt="icon more" class="h-5 w-auto"/>
+                </div>
+                <div>
+                    <img src="${feed.photo}" alt="postingan user" class="w-full h-auto"/>
+                </div>
+                <div class="flex flex-col gap-3 p-4 pb-6">
+                    <div class="flex flex-row justify-between items-center">
+                        <div class="flex flex-row items-center gap-4">
+                            <img src="./images/icon-like.png" alt="icon like" class="h-5 w-auto"/>
+                            <img src="./images/icon-comment.png" alt="icon comment" class="h-5 w-auto"/>
+                            <img src="./images/icon-send.png" alt="icon send" class="h-5 w-auto"/>
+                        </div>
+                        <img src="./images/icon-bookmark.png" alt="icon bookmark" class="h-5 w-auto"/>
+                    </div>
+                    <div class="text-sm font-bold">${feed.likes} likes</div>
+                    <div class="flex flex-row gap-2">
+                        <span class="text-sm font-bold">${feed.username}</span>
+                        <span class="text-sm truncate">${feed.caption}</span>
+                    </div>
+                    <div class="text-xs uppercase">${diff_days} days ago</div>
+                </div>
+                <div class="flex flex-row items-center gap-4 p-3 border-t border-gray-300 w-full">
+                    <img src="./images/icon-smile.png" alt="icon smile" class="h-5 w-auto"/>
+                    <input class="w-full text-sm border-none focus:outline-none p-1" placeholder="Add a comment..."/>
+                    <button class="text-sm font-bold text-blue-400">Post</button>
+                </div>
+            </div>`;
+            container.innerHTML += content;
+        });
+    </script>
+</body>
+</html>
