@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "cover": "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/5/24/97650f52-f0ac-4988-b1c8-2db47e125bcb.jpg",
+        "name": "LAMPU BARBER POLE 110CM AKRILIK / LED BARBERPOLE PREMIUM BARBERSHOP - 100cm TANPANEON",
+        "price": 1200000,
+        "cashback": true,
+        "location": "Jakarta Barat",
+        "status_seller": "power-merchant-pro",
+        "link_tokopedia": "https://www.tokopedia.com/kogo/lampu-barber-pole-110cm-akrilik-led-barberpole-premium-barbershop-100cm-tanpaneon?src=topads"
+    }, 
+    {
+        "id": 2,
+        "cover": "https://images.tokopedia.net/img/cache/900/VqbcmM/2021/10/29/2a8fe778-df84-4256-9c45-df7deaae4f64.jpg",
+        "name": "Pengering Kutek kuku Gel 45W Nail Art Manicure Lampu UV Smart LED TH28 - NAIL ART ORI",
+        "price": 99000,
+        "cashback": true,
+        "location": "Jakarta Utara",
+        "status_seller": "power-merchant",
+        "link_tokopedia": "https://www.tokopedia.com/tokohomia2810/pengering-kutek-kuku-gel-45w-nail-art-manicure-lampu-uv-smart-led-th28-nail-art-ori?src=topads"
+    }, 
+    {
+        "id": 3,
+        "cover": "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/6/21/e8d16ef7-e372-4479-8ebb-d64d6ca0d2f3.jpg",
+        "name": "Cermin Lipat Kaca Make Up Rias Lampu LED Light Mirror Portable - Tanpa LED",
+        "price": 17500,
+        "cashback": false,
+        "location": "Tangerang",
+        "status_seller": "power-merchant-pro",
+        "link_tokopedia": "https://www.tokopedia.com/ollyn-shop/cermin-lipat-kaca-make-up-rias-lampu-led-light-mirror-portable-tanpa-led?src=topads"
+    }, 
+    {
+        "id": 4,
+        "cover": "https://images.tokopedia.net/img/cache/900/VqbcmM/2020/11/14/39904572-aea2-40ad-806e-0fc9f3a49d1f.jpg",
+        "name": "alat pembersih kotoran telinga/korek kuping vacuum elektrik lampu led",
+        "price": 95000,
+        "cashback": true,
+        "location": "Tangerang",
+        "status_seller": "power-merchant-pro",
+        "link_tokopedia": "https://www.tokopedia.com/healthynatural99/alat-pembersih-kotoran-telinga-korek-kuping-vacuum-elektrik-lampu-led?src=topads"
+    }, 
+    {
+        "id": 5,
+        "cover": "https://images.tokopedia.net/img/cache/900/VqbcmM/2021/6/24/8eb7a199-e73e-4352-9a96-1074e377f85f.jpg",
+        "name": "LOVELI SUGAR WAX | WAXING | PENCABUT BULU |FREE 5 KAIN WAX+2 SPATULA",
+        "price": 39900,
+        "cashback": false,
+        "location": "Kota Bekasi",
+        "status_seller": "power-merchant",
+        "link_tokopedia": "https://www.tokopedia.com/lovelisugarwax/loveli-sugar-wax-waxing-pencabut-bulu-free-5-kain-wax-2-spatula"
+    },
+    
+    {
+        "id": 6,
+        "cover": "https://images.tokopedia.net/img/cache/900/hDjmkQ/2022/5/11/7fed9d11-c5da-4258-bc20-f82c71bda4e6.png",
+        "name": "HMNS Starter Pack",
+        "price": 145000,
+        "cashback": true,
+        "location": "Jakarta Pusat",
+        "status_seller": "power-merchant-pro",
+        "link_tokopedia": "https://www.tokopedia.com/hmnsperfume/hmns-starter-pack"
+    }
+]
