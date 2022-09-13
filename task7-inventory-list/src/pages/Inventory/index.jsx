@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InventoryCreate from './create';
 import ButtonAction from '../../components/ButtonAction';
 
 const Inventory = () => {
-    const [showCreate, setShowCreate] = useState(false);
+    // untuk mengatur buka tutup form Create
+    const [showCreate, setShowCreate] = useState(false)
     const handleShow = () => { setShowCreate(true) }
     const handleClose = () => { setShowCreate(false) }
 
-    const [inventoryList, setInventoryList] = useState([]);
+    // untuk menampilkan data jika sebelumnya di localStorage sudah ada tersimpan
+    let inventory = []
+    if (JSON.parse(localStorage.getItem('inventoryList')) !== null) {
+        inventory = JSON.parse(localStorage.getItem('inventoryList'))
+    }
+    const [inventoryList, setInventoryList] = useState(inventory);
+
+    // untuk menghandle callback dari child component setelah submit form
     const handleCallback = (childData) => {
         let updateList = [...inventoryList, { 
             id: inventoryList.length + 1, 
@@ -16,12 +24,21 @@ const Inventory = () => {
         }];
         setInventoryList(updateList);
     }
-
+    
+    // untuk menghandle penghapusan sesuai id item yang dipilih
     const handleDelete = (id) => {
         let filteredList = inventoryList.filter(item => { return item.id !== id ; });
         setInventoryList(filteredList);
-        console.log('delete id', id)
     }
+    
+    // setiap ada perubahan pada state inventoryList maka akan disimpan dalam localStorage
+    useEffect(() => {
+        if (inventoryList === []) {
+            localStorage.setItem('inventoryList', JSON.stringify([]))
+        } else {
+            localStorage.setItem('inventoryList', JSON.stringify(inventoryList))
+        }
+    }, [inventoryList])
 
     return (
         <div className='flex flex-col gap-4'>
@@ -32,7 +49,7 @@ const Inventory = () => {
             </div>
             { showCreate && <InventoryCreate parentCallback={handleCallback}/> }
             <div className=''>
-                { inventoryList.length > 0 
+                { inventoryList && inventoryList.length > 0 
                     ? <div className='flex flex-col gap-2'>
                         { inventoryList.map((i) => 
                             <div key={i.id} className='px-4 py-2 w-full flex flex-row items-center justify-between bg-orange-50 hover:bg-orange-100'>
