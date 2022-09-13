@@ -47,7 +47,7 @@ const InventoryCreate = (props) => {
 
     return (
         <>
-            <form className='flex flex-col sm:flex-row gap-2 slidedown'>
+            <form className='flex flex-col sm:flex-row gap-2'>
                 <div className='flex flex-col gap-1'>
                     <input type='text' id='item_name' name='itemName_field' value={formInput.item_name} onChange={handleChange} placeholder='Name' className='text-sm px-2.5 py-1.5 border border-gray-500 rounded-sm w-[240px]'/>
                     { isEmpty.item_name && <ValidationRequired/> }
