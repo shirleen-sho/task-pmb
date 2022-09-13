@@ -17,11 +17,20 @@ const Inventory = () => {
 
     // untuk menghandle callback dari child component setelah submit form
     const handleCallback = (childData) => {
-        let updateList = [...inventoryList, { 
-            id: inventoryList.length + 1, 
-            name: childData.item_name,
-            qty: childData.item_qty
-        }];
+        let updateList
+        if (inventoryList.length === 0) {
+            updateList = [...inventoryList, { 
+                id: 1, 
+                name: childData.item_name,
+                qty: childData.item_qty
+            }];
+        } else {
+            updateList = [...inventoryList, { 
+                id: inventoryList[inventoryList.length - 1].id + 1, 
+                name: childData.item_name,
+                qty: childData.item_qty
+            }];
+        }
         setInventoryList(updateList);
     }
     
