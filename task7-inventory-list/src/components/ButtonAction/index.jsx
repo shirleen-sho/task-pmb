@@ -11,8 +11,10 @@ const ButtonAction = (props) => {
             ? <button onClick={props.action} className='bg-red-600 hover:bg-red-700 text-white text-sm font-semibold w-fit h-fit px-5 py-1.5 rounded-md'>{props.children}</button>
             : props.color === 'red-outline'
             ? <button onClick={props.action} className='text-red-600 border border-red-600 bg-white hover:bg-red-700 hover:text-white text-sm font-semibold w-fit h-fit px-5 py-1.5 rounded-md'>{props.children}</button>
+            : props.color === 'green-outline'
+            ? <button onClick={props.action} className='text-green-500 border border-green-500 bg-white hover:bg-green-600 hover:text-white text-sm font-semibold w-fit h-fit px-5 py-1.5 rounded-md'>{props.children}</button>
             : props.color === 'orange-outline'
-            ? <button onClick={props.action} className='text-orange-600 border border-orange-600 bg-white text-sm font-semibold w-fit h-fit px-5 py-1.5 rounded-md'>{props.children}</button>
+            ? <button onClick={props.action} className='text-orange-500 border border-orange-500 bg-white text-sm font-semibold w-fit h-fit px-5 py-1.5 rounded-md'>{props.children}</button>
             : <></>
         }
         </>
