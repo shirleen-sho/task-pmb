@@ -4,17 +4,17 @@ import InventoryEdit from './edit';
 import ButtonAction from '../../components/ButtonAction';
 
 const Inventory = () => {
-    // untuk mengatur buka tutup form Create
-    const [showCreate, setShowCreate] = useState(false)
-    const handleShow = () => { setShowCreate(true) }
-    const handleClose = () => { setShowCreate(false) }
-
     // untuk menampilkan data jika sebelumnya di localStorage sudah ada tersimpan
     let inventory = []
     if (JSON.parse(localStorage.getItem('inventoryList')) !== null) {
         inventory = JSON.parse(localStorage.getItem('inventoryList'))
     }
     const [inventoryList, setInventoryList] = useState(inventory);
+
+    // untuk mengatur buka tutup form create
+    const [showCreate, setShowCreate] = useState(false)
+    const handleShow = () => { setShowCreate(true) }
+    const handleClose = () => { setShowCreate(false) }
 
     // untuk menghandle callback dari child component setelah submit form create
     const handleCallbackCreate = (childData) => {

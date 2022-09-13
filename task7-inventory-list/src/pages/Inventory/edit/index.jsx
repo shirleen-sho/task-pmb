@@ -62,7 +62,7 @@ const InventoryEdit = (props) => {
                     <input type='number' id='item_qty' name='itemQty_field' value={formInput.item_qty} onChange={handleChange} placeholder='Quantity' className='text-sm px-2.5 py-1.5 border border-gray-500 rounded-sm w-[120px]'/>
                     { isEmpty.item_qty && <ValidationRequired/> }
                 </div>
-                <ButtonAction color='orange' action={handleSave} disabled={!formValid}>Save</ButtonAction>
+                <ButtonAction color='orange' action={handleSave} disabled={!formValid}>Edit</ButtonAction>
                 <ButtonAction color='orange-outline' action={handleCancelEdit}>Cancel</ButtonAction>
             </form>
         </>
