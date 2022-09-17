@@ -1,0 +1,9 @@
+.selectBox {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url('../public/assets/images/chevron-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+    background-size: 22px;
+}
